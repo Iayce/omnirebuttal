@@ -29,7 +29,7 @@ If venue or limit is unknown, **stop and ask** or assume the most conservative p
 
 | Family | Code | Typical venues | Output |
 |--------|------|----------------|--------|
-| One-page PDF | `ONE_PAGE_PDF` | CVPR, ICCV, ECCV | `rebuttal.tex` → 1-page PDF |
+| One-page PDF | `ONE_PAGE_PDF` | CVPR, ICCV, ECCV; any venue whose current form requests a one-page PDF | `rebuttal.tex` → 1-page PDF |
 | Per-review text | `PER_REVIEW_TEXT` | ICML, KDD, WWW Industry | One text block per reviewer + char limit |
 | Threaded discussion | `THREADED_DISCUSSION` | NeurIPS, ICLR, ICLR-style, UAI, **ACM MM** | OpenReview thread(s), optional revised PDF |
 | Journal point-by-point | `JOURNAL_POINT_BY_POINT` | Nature family, major/minor revision journals | Response letter + change map |
@@ -44,7 +44,7 @@ Load the matching artifact guide from `references/artifacts/`.
 | CVPR / ICCV / ECCV | `ONE_PAGE_PDF` | 1 page incl. figs/refs | No (rebuttal only) | **No** |
 | ICML | `PER_REVIEW_TEXT` | 5000 chars / review | 2026: no upload during response | Anonymized URLs restricted |
 | NeurIPS / ICLR | `THREADED_DISCUSSION` | Venue-managed | Often yes (ICLR) | Policy varies |
-| ACM MM | `THREADED_DISCUSSION` | Check OpenReview form | Check CFP | Check CFP |
+| ACM MM | usually `THREADED_DISCUSSION`; override to `ONE_PAGE_PDF` if OpenReview requires PDF | Check OpenReview form | Check CFP | Check CFP |
 | KDD Research | `PER_REVIEW_TEXT` | Per-review window | Check CFP | Check CFP |
 | ARR | `ROLLING_REVISION` | Text response | Revision later | No images/links in response |
 | TMLR | `ROLLING_REVISION` | Public discussion | Multiple revision cycles | Public |
@@ -81,4 +81,4 @@ After Draft, always load [compression/space-engineering-router.md](compression/s
 
 ## ACM MM default
 
-Project path `ACMMM/rebuttal/` → default **`THREADED_DISCUSSION`**. If OpenReview specifies a character cap per post, also apply `per-review-text.md` budget rules to each thread.
+Project path `ACMMM/rebuttal/` → default **`THREADED_DISCUSSION`**, but **the live OpenReview form wins**. If the form or user-provided screenshot specifies a **one-page PDF**, route to `ONE_PAGE_PDF` and record this override in `VENUE_BRIEF.md`. If OpenReview specifies a character cap per post, also apply `per-review-text.md` budget rules to each thread.

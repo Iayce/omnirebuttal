@@ -1,7 +1,7 @@
-# Artifact: One-Page PDF (CVPR / ICCV / ECCV)
+# Artifact: One-Page PDF (CVPR / ICCV / ECCV / form override)
 
 **Family:** `ONE_PAGE_PDF`  
-**Output:** `rebuttal.tex` → single-page PDF via official author kit template.
+**Output:** `rebuttal.tex` → single-page PDF via official author kit template when available; otherwise via a venue-compatible template recorded in `VENUE_BRIEF.md`.
 
 **Provenance:** FastJSMA @ ICCV 2025 (433→554, borderline→accept). See [../cases/fastjsma-iccv2025.md](../cases/fastjsma-iccv2025.md).
 
@@ -14,7 +14,21 @@
 - **Don't promise—do.** Table/formula in rebuttal first; then paper update note.
 - Every concern answered; missing one point worse than weak answer.
 - Shared concerns → `@All` + one compact table/figure.
-- Tag reviewers (`@R1`, `@R2`) or `\textcolor{rev1}{...}` for navigation.
+- Tag reviewers (`@R1`, `@R2`) or `\textcolor{rev1}{...}` for navigation, but include a visible reviewer-ID map unless using the original reviewer IDs throughout.
+
+## Page-fill invariant
+
+Unless the venue or user explicitly asks for a short / sparse response, a one-page PDF rebuttal must use the full page and reach the final lines. Treat visible bottom whitespace as a drafting failure, not as harmless formatting.
+
+Fill unused space with high-value material only:
+
+- sharper AC-facing synthesis,
+- exact manuscript revision text,
+- compact evidence inventory from the paper / appendix / supplement,
+- limitation clarification that neutralizes a score-driving concern,
+- reviewer-ID map if shorthand labels are used.
+
+Never fill space with empty thanks, repeated claims, or promises of unrun experiments.
 
 ## Document structure
 
@@ -38,6 +52,15 @@
 ```
 
 Use Option B when space is tight; Option A when reviewer-specific quotes are legally/ politically necessary.
+
+## ACM-style form override
+
+Use this branch even for a normally threaded venue (e.g. ACM MM) when the **current OpenReview form** requires a one-page PDF.
+
+- Record the override in `VENUE_BRIEF.md` with source: OpenReview form / user screenshot / author instruction.
+- If no official rebuttal template is provided, use a conservative ACM-compatible template: `acmart`, `sigconf`, `review`, `anonymous`, two columns, no external links, no margin/font cheating.
+- Prefer short labels (`R1`–`R5`) over long OpenReview IDs in the PDF when space is tight, **but include a visible first-page map** (e.g. `Reviewer map: R1=gDaV, R2=b5UN, ...`). If no map is included, use the original OpenReview reviewer IDs throughout.
+- If the venue policy discourages new rebuttal experiments, set `mode: no-new-experiments` and answer by clarification, existing appendix evidence, bounded camera-ready edits, and explicit limitations.
 
 ## Core tactics (FastJSMA)
 
@@ -68,6 +91,27 @@ Tie speed to new feasible evaluation regime, not abstract FLOPs.
 ### 7. Consolidate and color-code
 
 Merge R1+R3 baseline requests into `@All`.
+
+### 8. No-new-experiments mode
+
+When the author cannot run experiments or the venue discourages them:
+
+1. State policy/compliance once in the opener ("we do not introduce new experiments here").
+2. Convert experiment requests into one of:
+   - already-present evidence (`paper`, `appendix`, `supplement`)
+   - bounded manuscript clarification (`FIX-PAPER`)
+   - honest limitation / future work (`ACK-LIMIT`)
+3. Do **not** promise uncomputed IAA, human ceiling, confidence intervals, or new baselines.
+4. Use the AC-facing line: "The objections concern exposition, policy-compliant limitations, and rubric transparency rather than a flaw in the benchmark's core contribution."
+5. For **benchmark scale**, **eval-subset cost**, and **QC/rubric buried in supplement**, use diplomatic phrasing — see [../phrasing/diplomatic-benchmark-rebuttal.md](../phrasing/diplomatic-benchmark-rebuttal.md).
+
+### Benchmark-specific patterns (diplomatic)
+
+| Concern | Say (once) | Avoid |
+|---------|------------|-------|
+| 898 vs "small" | "within the range of related **curated** meme resources" + "image-provenance burden" | "other papers are also small" |
+| 200 eval subset | "balanced **controlled slice**" + "costly multi-round search/crawl" across models/settings | "we cannot afford API costs" |
+| QC/rubric in appendix | "under-emphasized due to **space allocation**, not absence"; **rebalance main/supplement** | "read the appendix" |
 
 ## Comment-type cheat sheet
 

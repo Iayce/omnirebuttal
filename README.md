@@ -35,7 +35,7 @@ Copy the repository root (contains `SKILL.md`) into your agent's skills folder a
 
 Keywords: `rebuttal`, `author response`, `审稿回复`, `逐点回复`, `修回信`, `OpenReview response`.
 
-## Workflow (7 steps)
+## Workflow (8 steps)
 
 | Step | Module |
 |------|--------|
@@ -44,8 +44,12 @@ Keywords: `rebuttal`, `author response`, `审稿回复`, `逐点回复`, `修回
 | 2 | Triage → Issue Board |
 | 3 | Strategy (champion, color-code, AC escalation) |
 | 4 | Draft (venue-specific artifact + optional Official Comment) |
-| 5 | Compress & fit (page/char budget) |
-| 6 | Safety gates + QA |
+| 5 | Compress & fit (page-fill for 1-page PDF; char budget) |
+| 6 | **Citation verify** — LightRead CLI (`lr`) when references flagged |
+| 7 | **Coverage audit** — reviewer × concern × response map |
+| 8 | Safety gates + QA |
+
+See [CHANGELOG.md](CHANGELOG.md) for v1.2.0 details.
 
 Start at [`SKILL.md`](SKILL.md).
 
@@ -63,7 +67,13 @@ Start at [`SKILL.md`](SKILL.md).
 
 ```bash
 scripts/count_limits.sh draft.txt --chars --limit 5000
+
+# Citation verification (optional; requires lightread-cli)
+lr auth status --verify --format json
+lr web fetch "https://aclanthology.org/2024.findings-acl.300/" --format json
 ```
+
+Related: [references/citation-verification-lightread.md](references/citation-verification-lightread.md)
 
 ## Repository layout
 

@@ -4,9 +4,10 @@ Use with [intake-routing.md](intake-routing.md). **Prefer live `VENUE_BRIEF.md`*
 
 ## By family
 
-### ONE_PAGE_PDF (CVPR, ICCV, ECCV)
+### ONE_PAGE_PDF (CVPR, ICCV, ECCV, form overrides)
 
 - Optional 1-page PDF rebuttal via official template.
+- Also use when the live venue form requests a one-page PDF even if the venue normally uses OpenReview text threads.
 - No iterative author-reviewer exchange in rebuttal phase.
 - Anonymity required; **no external links**.
 - Optional **confidential comment to AC** (verify year) — not a second rebuttal page.
@@ -24,6 +25,7 @@ Use with [intake-routing.md](intake-routing.md). **Prefer live `VENUE_BRIEF.md`*
 ### THREADED_DISCUSSION (NeurIPS, ICLR, UAI, ACM MM)
 
 - OpenReview-style discussion; may allow revised PDF (ICLR).
+- Live form overrides this row: e.g. if ACM MM's current OpenReview form requests a one-page PDF, route to `ONE_PAGE_PDF`.
 - Per-reviewer threads may need self-contained replies (no "see R2").
 - Follow-up: delta replies only; cap at ~3 rounds per thread when stuck.
 - Track `pdfdiff` / large revision warnings when venue shows diffs to reviewers.

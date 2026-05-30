@@ -36,6 +36,7 @@ Ask per reviewer: *"What would move this score to accept?"* Address the **invisi
 2. Identify **main accept path** and **main reject path**.
 3. Mark **pivotal issue** and **pivotal reviewer** (`reviewer_priority: pivotal`).
 4. Allocate disproportionate drafting + evidence to must-win issues.
+5. Before submit, run [reviewer-coverage-audit.md](reviewer-coverage-audit.md) — label each major concern `强覆盖` / `保守覆盖` / `残余风险` for score-lift planning.
 
 ## Response posture (pick one per issue)
 

@@ -22,6 +22,7 @@ Run after Compress & Fit, before submit.
 - [ ] No invented numbers, citations, or experiments
 - [ ] New results tagged `user_confirmed_result`
 - [ ] Paper citations (Table X, §Y) verified against manuscript
+- [ ] Reviewer-flagged references verified via [citation-verification-lightread.md](citation-verification-lightread.md) (`lr web fetch` / `lr search`) before rebuttal claims "corrected BibTeX"
 
 ### Commitment
 - [ ] Every "we will revise" has REVISION_PLAN item or `future_work_only` label
@@ -42,14 +43,21 @@ Run after Compress & Fit, before submit.
 - [ ] No contradictory answers across reviewers
 - [ ] Numbers match submission unless new result explicitly labeled
 
+### Reviewer coverage audit
+- [ ] [reviewer-coverage-audit.md](reviewer-coverage-audit.md) completed: every critical/major Issue Board ID → rebuttal anchor
+- [ ] Pivotal / borderline reviewers get disproportionate evidence (strategy table)
+- [ ] Residual-risk items (IAA, human ceiling, new experiments) flagged — not silently omitted
+- [ ] Optional 中文对照表 for author sign-off before submit
+
 ## ONE_PAGE_PDF additions
 
-- [ ] Compiles to **≤1 page** (figures + refs included)
+- [ ] Compiles to **exactly 1 page** and fills the page to the final lines unless venue/user explicitly exempts
 - [ ] Official template; margins/fonts unchanged
 - [ ] **No external links**
 - [ ] Figures legible when **printed** (not zoom-only)
 - [ ] Fig/table numbering disjoint from main paper if needed
 - [ ] @All shared table/figure present for merged major concerns
+- [ ] Reviewer shorthand labels (`R1`, `R2`, …) have a visible reviewer-ID map, or original reviewer IDs are used throughout
 
 ## PER_REVIEW_TEXT additions
 

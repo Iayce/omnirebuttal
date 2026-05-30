@@ -8,7 +8,7 @@ description: >-
   compression, safety gates, and mandatory per-venue web research (official + community).
   Supports Official Comment / AC-only notes when appropriate. Triggers: rebuttal, author response, 审稿回复, 逐点回复,
   修回信, OpenReview response, response to reviewers, one-page rebuttal, rebuttal strategy.
-version: 1.1.0
+version: 1.2.0
 ---
 
 # Omnirebuttal
@@ -23,15 +23,17 @@ kernel + specialized artifact branches** — not a lowest-common-denominator mer
 - ARR/TMLR rolling review responses
 - Rebuttal strategy, Issue Board, or REVISION_PLAN without full draft (`triage-only`)
 
-## Seven-step workflow
+## Eight-step workflow
 
 0. **Venue Research (mandatory)** — Read [references/intake-venue-research.md](references/intake-venue-research.md): search **official** rules + **community** tips (官网, OpenReview, 小红书, 知乎, Reddit, …) via **web-access**; write `VENUE_BRIEF.md` before drafting.
 1. **Intake & Route** — Read [references/intake-routing.md](references/intake-routing.md): venue, artifact family, limits, task mode (informed by brief).
 2. **Triage** — Read [references/triage-issue-board.md](references/triage-issue-board.md): Issue Board + merge map.
 3. **Strategy** — Read [references/strategy-decision.md](references/strategy-decision.md): champion, color-code, postures; flag AC escalation / Official Comment need.
 4. **Draft** — Load **one** primary artifact from [references/artifacts/](references/artifacts/); add [official-comment.md](references/artifacts/official-comment.md) when strategy warrants.
-5. **Compress & Fit** — Read [references/compression/space-engineering-router.md](references/compression/space-engineering-router.md); apply PDF or text compression; run `scripts/count_limits.sh` when applicable.
-6. **Safety + QA** — [references/safety-gates.md](references/safety-gates.md) + [references/qa-checklist.md](references/qa-checklist.md).
+5. **Compress & Fit** — Read [references/compression/space-engineering-router.md](references/compression/space-engineering-router.md); apply PDF or text compression; run **page-fill pass** for `ONE_PAGE_PDF`; run `scripts/count_limits.sh` when applicable.
+6. **Citation verify (when flagged)** — Read [references/citation-verification-lightread.md](references/citation-verification-lightread.md): use **LightRead CLI (`lr`)** to validate corrected BibTeX before claiming fixes in rebuttal.
+7. **Coverage audit** — Read [references/reviewer-coverage-audit.md](references/reviewer-coverage-audit.md): reviewer × concern × response map; score-lift gaps; optional 中文 author sign-off table.
+8. **Safety + QA** — [references/safety-gates.md](references/safety-gates.md) + [references/qa-checklist.md](references/qa-checklist.md).
 
 ## Artifact family router
 
@@ -62,6 +64,9 @@ Venue details: [references/venue-matrix.md](references/venue-matrix.md).
 | Copy-ready phrases | templates/response-templates.md |
 | ICCV 2025 win case | cases/fastjsma-iccv2025.md |
 | Source provenance (web + SKMP) | external-sources.md |
+| Citation fix (LightRead `lr`) | citation-verification-lightread.md |
+| Reviewer coverage / 中文对照表 | reviewer-coverage-audit.md |
+| Benchmark scale / QC diplomacy | phrasing/diplomatic-benchmark-rebuttal.md |
 
 ## Default stance (all families)
 
@@ -82,6 +87,7 @@ Draft rebuttal / response letter (venue-specific)
 Official Comment / AC-only note (if warranted)
 Manuscript follow-ups (REVISION_PLAN)
 Risk flags / AUTHOR_INPUT_NEEDED
+Reviewer coverage map (optional 中文)
 中文核对 (optional)
 ```
 
@@ -90,6 +96,11 @@ Risk flags / AUTHOR_INPUT_NEEDED
 ```bash
 # Character limit check (OpenReview / ICML text)
 scripts/count_limits.sh draft.txt --chars --limit 5000
+
+# Citation verification (LightRead CLI — install: bun add -g lightread-cli)
+lr auth status --verify --format json
+lr web fetch "https://aclanthology.org/2024.findings-acl.300/" --format json
+lr search "Paper Title" --format json
 ```
 
 ## Legacy skill

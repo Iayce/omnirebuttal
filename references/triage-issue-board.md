@@ -62,6 +62,7 @@ Atomize every reviewer comment **before** drafting. One paragraph may contain se
 6. **Mark pivotal reviewers** — low/borderline score + addressable concerns + high confidence.
 7. **Label action + response_mode** per issue.
 8. **Order** — critical with strong answers first; batch minors last.
+9. **Pre-submit audit** — after draft, run [reviewer-coverage-audit.md](reviewer-coverage-audit.md) for reviewer × concern × response map (optional 中文 table for author sign-off).
 
 ## Venue-specific field mapping
 

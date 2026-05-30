@@ -13,6 +13,8 @@ core references and compression modules.
 | Merrie Stanford | https://cs.stanford.edu/~merrie/merrie_rebuttal_tips.pdf | Be specific in promises: give numbers, paragraph text, or distinction vs prior work—not vague "we will add" | `safety-gates.md`, `templates/` |
 | Niklas Elmqvist | https://niklaselmqvist.medium.com/writing-rebuttals-7f6949eddf6e | Mirror reviewer structure/numbering; 5000-char budget; facts over confrontation | `artifacts/per-review-text.md` |
 | CVPR Author Kit | https://github.com/cvpr-org/author-kit/blob/main/rebuttal.tex | 1 page hard limit incl. figs/refs; two-column; no external links; fig width ~0.8 linewidth; separate fig/table numbering from main paper | `compression/one-page-pdf-latex.md` |
+| ACM rebuttal template (non-official) | https://github.com/gulucaptain/acmmm_rebuttal_template/tree/main | ACM `sigconf` two-column fallback; title/submission ID in header; preserves review line numbers; useful when ACM-style venue requests PDF but gives no template | `compression/one-page-pdf-latex.md` |
+| LightRead CLI (`lr`) | https://lightingread.cn/help#cli | `lr search`, `lr web fetch`, `lr websearch` for citation metadata; ACL Anthology / arXiv / ECCV proceedings verification before rebuttal cites "corrected BibTeX" | `citation-verification-lightread.md` |
 | Bill Freeman (CVPR18 panel, via Devi) | — | Rebuttal is for judges (AC), not opponents; crowded marketplace metaphor | `strategy-decision.md` |
 
 ## Devi Parikh — 18 tips (condensed)
