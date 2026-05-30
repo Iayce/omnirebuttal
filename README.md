@@ -35,7 +35,7 @@ Copy the repository root (contains `SKILL.md`) into your agent's skills folder a
 
 Keywords: `rebuttal`, `author response`, `审稿回复`, `逐点回复`, `修回信`, `OpenReview response`.
 
-## Workflow (8 steps)
+## Workflow (9 steps)
 
 | Step | Module |
 |------|--------|
@@ -43,13 +43,14 @@ Keywords: `rebuttal`, `author response`, `审稿回复`, `逐点回复`, `修回
 | 1 | Intake & route by artifact family |
 | 2 | Triage → Issue Board |
 | 3 | Strategy (champion, color-code, AC escalation) |
-| 4 | Draft (venue-specific artifact + optional Official Comment) |
-| 5 | Compress & fit (page-fill for 1-page PDF; char budget) |
-| 6 | **Citation verify** — LightRead CLI (`lr`) when references flagged |
-| 7 | **Coverage audit** — reviewer × concern × response map |
-| 8 | Safety gates + QA |
+| 4 | **Experiment plan** — run / clarify / defer when reviewers ask for numbers → `EXPERIMENT_PLAN.md` |
+| 5 | Draft (venue-specific artifact + optional Official Comment) |
+| 6 | Compress & fit (page-fill for 1-page PDF; char budget) |
+| 7 | **Citation verify** — LightRead CLI (`lr`) when references flagged |
+| 8 | **Coverage audit** — reviewer × concern × response map |
+| 9 | Safety gates + QA |
 
-See [CHANGELOG.md](CHANGELOG.md) for v1.2.0 details.
+See [CHANGELOG.md](CHANGELOG.md) for version history.
 
 Start at [`SKILL.md`](SKILL.md).
 
@@ -93,6 +94,6 @@ MIT — see [LICENSE](LICENSE).
 
 ## 中文简介
 
-Omnirebuttal 是一个面向 Cursor / Agent 的统一 **rebuttal（作者回复）** Skill：自动按会议/期刊形态路由（CV 一页 PDF、OpenReview 线程、ICML 字数限制、期刊逐点修回信等），并在每次回复前强制调研当届 venue 官方规则与社区经验，必要时起草 Official Comment / AC 私密说明。
+Omnirebuttal 是一个面向 Cursor / Agent 的统一 **rebuttal（作者回复）** Skill：自动按会议/期刊形态路由（CV 一页 PDF、OpenReview 线程、ICML 字数限制、期刊逐点修回信等），并在每次回复前强制调研当届 venue 官方规则与社区经验；对审稿人提出的**补实验需求**提供分级决策（跑 / 重分析 / 澄清 / 延期），必要时起草 Official Comment / AC 私密说明。
 
 安装：`git clone` 到 `~/.cursor/skills/omnirebuttal` 即可。

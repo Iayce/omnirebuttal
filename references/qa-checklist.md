@@ -49,6 +49,13 @@ Run after Compress & Fit, before submit.
 - [ ] Residual-risk items (IAA, human ceiling, new experiments) flagged — not silently omitted
 - [ ] Optional 中文对照表 for author sign-off before submit
 
+### Experiment plan (when reviewers ask for new numbers)
+- [ ] `EXPERIMENT_PLAN.md` exists if any issue has `NEW-ANALYSIS`, `needs_experiment`, or experiment-class tags
+- [ ] Each experiment ask has Tier (A–D), feasibility, and decision (`RUN` / `CLARIFY` / `DEFER` / …)
+- [ ] All rebuttal numbers from new runs tagged `user_confirmed_result` and author-approved
+- [ ] Substantial requests declined with venue-policy or scope anchor (not raw cost complaints)
+- [ ] At most 1–2 new result tables on `ONE_PAGE_PDF` unless user confirms space
+
 ## ONE_PAGE_PDF additions
 
 - [ ] Compiles to **exactly 1 page** and fills the page to the final lines unless venue/user explicitly exempts
@@ -105,6 +112,7 @@ From `rebuttal-self-review`: coverage scan, tone pass, factual spot-check (3–5
 ## Output package complete?
 
 - [ ] VENUE_BRIEF.md
+- [ ] EXPERIMENT_PLAN.md (if experiment asks present)
 - [ ] Response strategy summary
 - [ ] Comment tracker (Issue Board)
 - [ ] Draft rebuttal (venue-specific)

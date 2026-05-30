@@ -5,10 +5,10 @@ description: >-
   (CVPR/ICCV/ECCV), OpenReview threaded discussion (NeurIPS/ICLR/ACM MM), per-review
   character limits (ICML/KDD), Nature/journal point-by-point revision letters, and
   ARR/TMLR rolling revision. Routes by venue artifact family after shared triage, strategy,
-  compression, safety gates, and mandatory per-venue web research (official + community).
-  Supports Official Comment / AC-only notes when appropriate. Triggers: rebuttal, author response, 审稿回复, 逐点回复,
+  compression, safety gates, mandatory per-venue web research (official + community), and
+  experiment-request routing (run vs clarify vs defer). Supports Official Comment / AC-only notes when appropriate. Triggers: rebuttal, author response, 审稿回复, 逐点回复,
   修回信, OpenReview response, response to reviewers, one-page rebuttal, rebuttal strategy.
-version: 1.2.0
+version: 1.3.0
 ---
 
 # Omnirebuttal
@@ -23,17 +23,18 @@ kernel + specialized artifact branches** — not a lowest-common-denominator mer
 - ARR/TMLR rolling review responses
 - Rebuttal strategy, Issue Board, or REVISION_PLAN without full draft (`triage-only`)
 
-## Eight-step workflow
+## Nine-step workflow
 
 0. **Venue Research (mandatory)** — Read [references/intake-venue-research.md](references/intake-venue-research.md): search **official** rules + **community** tips (官网, OpenReview, 小红书, 知乎, Reddit, …) via **web-access**; write `VENUE_BRIEF.md` before drafting.
 1. **Intake & Route** — Read [references/intake-routing.md](references/intake-routing.md): venue, artifact family, limits, task mode (informed by brief).
 2. **Triage** — Read [references/triage-issue-board.md](references/triage-issue-board.md): Issue Board + merge map.
 3. **Strategy** — Read [references/strategy-decision.md](references/strategy-decision.md): champion, color-code, postures; flag AC escalation / Official Comment need.
-4. **Draft** — Load **one** primary artifact from [references/artifacts/](references/artifacts/); add [official-comment.md](references/artifacts/official-comment.md) when strategy warrants.
-5. **Compress & Fit** — Read [references/compression/space-engineering-router.md](references/compression/space-engineering-router.md); apply PDF or text compression; run **page-fill pass** for `ONE_PAGE_PDF`; run `scripts/count_limits.sh` when applicable.
-6. **Citation verify (when flagged)** — Read [references/citation-verification-lightread.md](references/citation-verification-lightread.md): use **LightRead CLI (`lr`)** to validate corrected BibTeX before claiming fixes in rebuttal.
-7. **Coverage audit** — Read [references/reviewer-coverage-audit.md](references/reviewer-coverage-audit.md): reviewer × concern × response map; score-lift gaps; optional 中文 author sign-off table.
-8. **Safety + QA** — [references/safety-gates.md](references/safety-gates.md) + [references/qa-checklist.md](references/qa-checklist.md).
+4. **Experiment plan (conditional)** — Read [references/experiment-rebuttal-router.md](references/experiment-rebuttal-router.md): classify each experiment ask (Tier A–D, feasibility); write `EXPERIMENT_PLAN.md`; author-confirm before any `RUN`.
+5. **Draft** — Load **one** primary artifact from [references/artifacts/](references/artifacts/); add [official-comment.md](references/artifacts/official-comment.md) when strategy warrants.
+6. **Compress & Fit** — Read [references/compression/space-engineering-router.md](references/compression/space-engineering-router.md); apply PDF or text compression; run **page-fill pass** for `ONE_PAGE_PDF`; run `scripts/count_limits.sh` when applicable.
+7. **Citation verify (when flagged)** — Read [references/citation-verification-lightread.md](references/citation-verification-lightread.md): use **LightRead CLI (`lr`)** to validate corrected BibTeX before claiming fixes in rebuttal.
+8. **Coverage audit** — Read [references/reviewer-coverage-audit.md](references/reviewer-coverage-audit.md): reviewer × concern × response map; score-lift gaps; optional 中文 author sign-off table.
+9. **Safety + QA** — [references/safety-gates.md](references/safety-gates.md) + [references/qa-checklist.md](references/qa-checklist.md).
 
 ## Artifact family router
 
@@ -57,6 +58,7 @@ Venue details: [references/venue-matrix.md](references/venue-matrix.md).
 | Official Comment / AC-only note | artifacts/official-comment.md |
 | Issue Board | triage-issue-board.md |
 | Champion, ordering, postures | strategy-decision.md |
+| Experiment asks (run / clarify / defer) | experiment-rebuttal-router.md |
 | Provenance / promises / coverage | safety-gates.md |
 | One-page PDF layout, tiny tables, figs | compression/one-page-pdf-latex.md |
 | OpenReview char budget, markdown tables | compression/text-budget-markdown.md |
@@ -81,6 +83,7 @@ Unless the user asks otherwise:
 
 ```text
 VENUE_BRIEF.md (official limits + community intel + sources)
+EXPERIMENT_PLAN.md (when any reviewer asks for new numbers)
 Response strategy summary
 Comment tracker (Issue Board + merge map)
 Draft rebuttal / response letter (venue-specific)

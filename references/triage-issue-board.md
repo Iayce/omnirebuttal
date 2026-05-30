@@ -19,6 +19,9 @@ Atomize every reviewer comment **before** drafting. One paragraph may contain se
 | `response_mode` | direct_clarification, grounded_evidence, narrow_concession, future_work_boundary, structural_distinction |
 | `merge_key` | Shared ID if multiple reviewers raise same concern (e.g. `baseline-pgd`) |
 | `evidence_source` | paper, review, user_confirmed_result, needs_experiment, needs_user_input |
+| `experiment-class` | optional: missing-baseline, missing-ablation, scale-eval, human-eval, … (see experiment-rebuttal-router.md) |
+| `experiment-tier` | optional: A / B / C / D |
+| `feasibility` | optional: ready_now, moderate_effort, high_risk, not_realistic, unknown |
 | `status` | open / answered / deferred / needs_user_input |
 
 ## Severity guide
@@ -63,6 +66,7 @@ Atomize every reviewer comment **before** drafting. One paragraph may contain se
 7. **Label action + response_mode** per issue.
 8. **Order** — critical with strong answers first; batch minors last.
 9. **Pre-submit audit** — after draft, run [reviewer-coverage-audit.md](reviewer-coverage-audit.md) for reviewer × concern × response map (optional 中文 table for author sign-off).
+10. **Experiment plan check** — if any `needs_experiment` or `NEW-ANALYSIS` issues exist, verify `EXPERIMENT_PLAN.md` is complete ([experiment-rebuttal-router.md](experiment-rebuttal-router.md)).
 
 ## Venue-specific field mapping
 

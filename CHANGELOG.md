@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0] — 2026-05-30
+
+### Added
+
+- **Experiment rebuttal router:** [references/experiment-rebuttal-router.md](references/experiment-rebuttal-router.md) — venue policy matrix, Tier A–D, feasibility labels, decision tree, push-back phrasing, distilled from CVPR/ICLR/NeurIPS policies + SKMP skills (EvoScientist, review-rebuttal, review2rebuttal) + FastJSMA case.
+- **Experiment plan template:** [references/templates/experiment-plan-template.md](references/templates/experiment-plan-template.md).
+
+### Enhanced
+
+- Workflow expanded to **nine steps** with mandatory `EXPERIMENT_PLAN.md` when reviewers request new numbers.
+- Issue Board schema: `experiment-class`, `experiment-tier`, `feasibility` fields.
+- QA checklist: experiment plan gates.
+
 ## [1.2.0] — 2026-05-30
 
 ### Added

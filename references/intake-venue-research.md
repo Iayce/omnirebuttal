@@ -49,7 +49,7 @@ Copy into `VENUE_BRIEF.md` (template: [templates/venue-brief-template.md](templa
 ### C. Policy gates
 
 - [ ] Anonymity rules (URLs, self-citation phrasing, code links)
-- [ ] New experiments / new results in rebuttal?
+- [ ] New experiments / new results in rebuttal? → record in `VENUE_BRIEF.md`; routes to [experiment-rebuttal-router.md](experiment-rebuttal-router.md)
 - [ ] LLM / AI assistance disclosure required?
 - [ ] **Official Comment** or **confidential AC channel** available? Limits?
 

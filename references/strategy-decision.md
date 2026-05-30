@@ -82,12 +82,25 @@ When `Escalate to AC` applies, load [artifacts/official-comment.md](artifacts/of
 
 ## Experiment response planning
 
-For each `NEW-ANALYSIS` or `grounded_evidence` issue:
+For each `NEW-ANALYSIS`, `missing-baseline`, `missing-ablation`, or reviewer request for new numbers:
+
+1. Load [experiment-rebuttal-router.md](experiment-rebuttal-router.md) — full decision tree, tiers, venue policy, phrasing.
+2. Write or update `EXPERIMENT_PLAN.md` ([template](templates/experiment-plan-template.md)).
+3. Pick posture per issue:
+
+| Situation | Posture |
+|-----------|---------|
+| Already in paper/appendix/logs | `CLARIFY` + cite; optional reformat table |
+| Tier A reanalysis only | `RUN-REANALYSIS` if author confirms |
+| Tier B–C, pivotal reviewer, venue allows | `RUN` / `RUN-IF-TIME` after author confirm |
+| Substantial / major-revision scope | `DEFER` + venue policy + bounded camera-ready |
+| Author / venue no-new-experiments | `ACK-LIMIT` + evidence inventory (see one-page-pdf-cv) |
 
 - Smallest credible experiment / table / proof sketch.
-- Feasibility before deadline.
+- Feasibility before deadline (`ready_now` … `not_realistic`).
 - Success / partial / failure wording prepared.
-- Venue policy: CV discourages unrequested new results; ARR allows small responsive experiments.
+- **One new experiment table beats three paragraphs** — but only with `user_confirmed_result`.
+- Do not auto-run GPU jobs; author must approve `RUN` rows.
 
 ## Counterintuitive principles
 
