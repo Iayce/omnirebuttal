@@ -77,6 +77,24 @@ Venue details: [references/venue-matrix.md](references/venue-matrix.md).
 - Every Issue Board item gets an anchor; merge duplicates via `@All` or `merge_key`.
 - No invented numbers, citations, or manuscript edits (three safety gates).
 
+## Iron rules — NEVER violate
+
+> **REVIEWER MAP MUST NOT INCLUDE RATINGS OR CONFIDENCE SCORES.**
+>
+> The reviewer map line (e.g. `Reviewer map. R1=Lv29; R2=jPgC; ...`) must contain
+> **only the reviewer ID/alias** — nothing else. Explicitly prohibited:
+> - Rating labels: "Borderline", "Weak Reject", "Strong Accept", "Accept", "Reject", etc.
+> - Confidence levels: "Expert", "Knowledgeable", "Familiar", "Basic", or any numerical score.
+> - Any meta-information about the reviewer's score or expertise.
+>
+> Rationale: Including ratings in the rebuttal document is visible to reviewers and
+> area chairs, and signals to reviewers how their score compares to others. This can
+> undermine the review process and is considered unprofessional. The reviewer map line
+> serves only as a colour-coding legend.
+>
+> Correct format: `Reviewer map. R1=Lv29; R2=jPgC; R3=ypyP; R4=fXF9.`  
+> Wrong format:   `Reviewer map. R1=Lv29 (Expert, Borderline); R2=jPgC (Familiar, Weak Reject); ...`
+
 ## Standard output package
 
 Unless the user asks otherwise:
