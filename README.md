@@ -1,8 +1,10 @@
 # Omnirebuttal
 
-**Unified Cursor Agent Skill for peer-review author responses** — CV one-page PDF, OpenReview threads, ICML character limits, journal point-by-point letters, and ARR/TMLR rolling revision.
+**Unified Agent Skill** ([`SKILL.md`](SKILL.md)) for peer-review author responses — compatible with **Cursor**, **Claude Code**, Codex CLI, and any agent that auto-loads skills. CV one-page PDF, OpenReview threads, ICML character limits, journal point-by-point letters, and ARR/TMLR rolling revision.
 
 Router + shared kernel + specialized artifact branches. Not a lowest-common-denominator merge.
+
+Discoverable on [SkillsMP](https://skillsmp.com/search?q=omnirebuttal) (Agent Skills marketplace; indexed from this GitHub repo).
 
 ## Install
 
@@ -33,7 +35,7 @@ Copy the repository root (contains `SKILL.md`) into your agent's skills folder a
 - ARR / TMLR rolling responses
 - Strategy-only: Issue Board, triage, `REVISION_PLAN`
 
-Keywords: `rebuttal`, `author response`, `审稿回复`, `逐点回复`, `修回信`, `OpenReview response`.
+Keywords: `rebuttal`, `author response`, `审稿回复`, `逐点回复`, `修回信`, `OpenReview response`, `Agent Skill`, `SKILL.md`, `Cursor`, `Claude Code`, `SkillsMP`.
 
 ## Workflow (9 steps)
 
@@ -94,6 +96,6 @@ MIT — see [LICENSE](LICENSE).
 
 ## 中文简介
 
-Omnirebuttal 是一个面向 Cursor / Agent 的统一 **rebuttal（作者回复）** Skill：自动按会议/期刊形态路由（CV 一页 PDF、OpenReview 线程、ICML 字数限制、期刊逐点修回信等），并在每次回复前强制调研当届 venue 官方规则与社区经验；对审稿人提出的**补实验需求**提供分级决策（跑 / 重分析 / 澄清 / 延期），必要时起草 Official Comment / AC 私密说明。
+Omnirebuttal 是一个 **Agent Skill**（根目录 `SKILL.md`），面向 **Cursor**、**Claude Code** 等 Agent 的统一 **rebuttal（作者回复）** 工作流：自动按会议/期刊形态路由（CV 一页 PDF、OpenReview 线程、ICML 字数限制、期刊逐点修回信等），并在每次回复前强制调研当届 venue 官方规则与社区经验；对审稿人提出的**补实验需求**提供分级决策（跑 / 重分析 / 澄清 / 延期），必要时起草 Official Comment / AC 私密说明。可在 [SkillsMP](https://skillsmp.com/search?q=omnirebuttal) 搜索安装。
 
 安装：`git clone` 到 `~/.cursor/skills/omnirebuttal` 即可。
